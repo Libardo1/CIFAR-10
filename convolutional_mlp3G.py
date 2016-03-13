@@ -78,8 +78,7 @@ class LeNetConvPoolLayer(object):
 		W_bound = numpy.sqrt(6. / (fan_in + fan_out))
 		self.W = theano.shared(
 			numpy.asarray(
-				#rng.uniform(low=-W_bound, high=W_bound, size=filter_shape),
-				rng.normal(loc=0,scale=1,size=filter_shape),
+				rng.uniform(low=-W_bound, high=W_bound, size=filter_shape),
 				dtype=theano.config.floatX
 			),
 			borrow=True
@@ -118,8 +117,8 @@ class LeNetConvPoolLayer(object):
 
 
 def evaluate_lenet5(learning_rate=1, n_epochs=500,
-					dataset='CIFAR10Z.pkl.gz',
-					nkerns=[24, 60,20], batch_size=100):
+					dataset='CIFAR10G.pkl.gz',
+					nkerns=[6, 12,20], batch_size=100):
 	""" Demonstrates lenet on MNIST dataset
 
 	:type learning_rate: float
@@ -181,19 +180,28 @@ def evaluate_lenet5(learning_rate=1, n_epochs=500,
 		input=layer0_input,
 		image_shape=(batch_size, 1, 32, 32),
 		filter_shape=(nkerns[0], 1, 5, 5),
-		poolsize=(2, 2)
+		poolsize=(1, 1)
 	)
 
 	# Construct the second convolutional pooling layer
 	# filtering reduces the image size to (12-5+1, 12-5+1) = (8, 8)
 	# maxpooling reduces this further to (8/2, 8/2) = (4, 4)
 	# 4D output tensor is thus of shape (batch_size, nkerns[1], 4, 4)
-	layer1_input = DropOut(layer0.output,0.1)
+	layer01_input = DropOut(layer0.output,0.1)
+	layer01 = LeNetConvPoolLayer(
+		rng,
+		input=layer01_input,
+		image_shape=(batch_size, nkerns[0], 28, 28),
+		filter_shape=(nkerns[1], nkerns[0], 5, 5),
+		poolsize=(2, 2)
+	)
+
+	layer1_input = DropOut(layer01.output,0.1)
 	layer1 = LeNetConvPoolLayer(
 		rng,
 		input=layer1_input,
-		image_shape=(batch_size, nkerns[0], 14, 14),
-		filter_shape=(nkerns[1], nkerns[0], 5, 5),
+		image_shape=(batch_size, nkerns[1], 12, 12),
+		filter_shape=(nkerns[2], nkerns[1], 5, 5),
 		poolsize=(2, 2)
 	)
 
@@ -207,7 +215,7 @@ def evaluate_lenet5(learning_rate=1, n_epochs=500,
 	layer2 = HiddenLayer(
 		rng,
 		input=layer2_input,
-		n_in=nkerns[1] * 5 * 5,
+		n_in=nkerns[2] * 4 * 4,
 		n_out=500,
 		activation=T.nnet.sigmoid
 	)
@@ -299,9 +307,9 @@ def evaluate_lenet5(learning_rate=1, n_epochs=500,
 
 			learning_rate = lr - 0.5*epoch/n_epochs*lr
 			cost_ij = train_model(minibatch_index, learning_rate)
-			#if iter % 100 == 0:
-			#print 'training @ iter = %d, learning rate = %f costij= %f'% (iter, learning_rate, cost_ij)
-			#print cost_ij
+			if iter % 100 == 0:
+				print 'training @ iter = %d, learning rate = %f cost=%f'% (iter, learning_rate, cost_ij)
+
 
 			if (iter + 1) % validation_frequency == 0:
 
@@ -309,9 +317,9 @@ def evaluate_lenet5(learning_rate=1, n_epochs=500,
 				validation_losses = [validate_model(i) for i
 									 in xrange(n_valid_batches)]
 				this_validation_loss = numpy.mean(validation_losses)
-				print('epoch %i, minibatch %i/%i, validation error %f %% cost %f' %
+				print('epoch %i, minibatch %i/%i, validation error %f %%' %
 					  (epoch, minibatch_index + 1, n_train_batches,
-					   this_validation_loss * 100., cost_ij))
+					   this_validation_loss * 100.))
 
 				# if we got the best validation score until now
 				if this_validation_loss < best_validation_loss:

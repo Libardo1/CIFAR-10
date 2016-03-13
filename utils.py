@@ -149,3 +149,22 @@ def dropout(input, pdrop):
 	srs = T.shared_randomstreams.RandomStreams(rng.randint(1e6))
 	mask = srs.binomial(n=1, p=1 - pdrop, size=input.shape)
 	return input * T.cast(mask, theano.config.floatX)
+
+
+import numpy as np
+
+def zca_whitening(inputs):
+    #Correlation matrix
+    sigma = np.dot(inputs, inputs.T)/inputs.shape[1]
+
+    #Singular Value Decomposition
+    U,S,V = np.linalg.svd(sigma)
+
+    #Whitening constant, it prevents division by zero
+    epsilon = 0.1
+
+    #ZCA Whitening matrix
+    ZCAMatrix = np.dot(np.dot(U, np.diag(1.0/np.sqrt(np.diag(S) + epsilon))), U.T)
+
+    #Data whitening
+    return np.dot(ZCAMatrix, inputs)

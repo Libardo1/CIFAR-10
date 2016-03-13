@@ -1,0 +1,161 @@
+Using normal distribution initialization with 24,60, sigmoid and ZCA
+
+/usr/bin/python /Users/Dipendra/MLearning/Kaggle/CIFAR-10/convolutional_mlp.py
+... loading data
+... building the model
+... training
+epoch 1, minibatch 400/400, validation error 86.420000 %
+     epoch 1, minibatch 400/400, test error of best model 86.640000 %
+epoch 2, minibatch 400/400, validation error 78.470000 %
+     epoch 2, minibatch 400/400, test error of best model 78.210000 %
+epoch 3, minibatch 400/400, validation error 72.050000 %
+     epoch 3, minibatch 400/400, test error of best model 73.160000 %
+epoch 4, minibatch 400/400, validation error 70.400000 %
+     epoch 4, minibatch 400/400, test error of best model 69.870000 %
+epoch 5, minibatch 400/400, validation error 66.550000 %
+     epoch 5, minibatch 400/400, test error of best model 66.430000 %
+epoch 6, minibatch 400/400, validation error 63.840000 %
+     epoch 6, minibatch 400/400, test error of best model 63.500000 %
+epoch 7, minibatch 400/400, validation error 63.830000 %
+     epoch 7, minibatch 400/400, test error of best model 63.390000 %
+epoch 8, minibatch 400/400, validation error 62.850000 %
+     epoch 8, minibatch 400/400, test error of best model 62.630000 %
+epoch 9, minibatch 400/400, validation error 57.230000 %
+     epoch 9, minibatch 400/400, test error of best model 57.490000 %
+epoch 10, minibatch 400/400, validation error 54.000000 %
+     epoch 10, minibatch 400/400, test error of best model 54.340000 %
+epoch 11, minibatch 400/400, validation error 56.520000 %
+epoch 12, minibatch 400/400, validation error 54.990000 %
+epoch 13, minibatch 400/400, validation error 52.130000 %
+     epoch 13, minibatch 400/400, test error of best model 52.570000 %
+epoch 14, minibatch 400/400, validation error 53.220000 %
+epoch 15, minibatch 400/400, validation error 48.220000 %
+     epoch 15, minibatch 400/400, test error of best model 48.250000 %
+epoch 16, minibatch 400/400, validation error 47.000000 %
+     epoch 16, minibatch 400/400, test error of best model 47.690000 %
+epoch 17, minibatch 400/400, validation error 46.340000 %
+     epoch 17, minibatch 400/400, test error of best model 46.300000 %
+epoch 18, minibatch 400/400, validation error 46.450000 %
+epoch 19, minibatch 400/400, validation error 44.320000 %
+     epoch 19, minibatch 400/400, test error of best model 44.970000 %
+epoch 20, minibatch 400/400, validation error 44.580000 %
+epoch 21, minibatch 400/400, validation error 43.870000 %
+     epoch 21, minibatch 400/400, test error of best model 43.510000 %
+epoch 22, minibatch 400/400, validation error 43.420000 %
+     epoch 22, minibatch 400/400, test error of best model 44.190000 %
+epoch 23, minibatch 400/400, validation error 44.900000 %
+epoch 24, minibatch 400/400, validation error 41.920000 %
+     epoch 24, minibatch 400/400, test error of best model 42.450000 %
+epoch 25, minibatch 400/400, validation error 41.150000 %
+     epoch 25, minibatch 400/400, test error of best model 42.120000 %
+epoch 26, minibatch 400/400, validation error 41.710000 %
+epoch 27, minibatch 400/400, validation error 40.460000 %
+     epoch 27, minibatch 400/400, test error of best model 40.710000 %
+epoch 28, minibatch 400/400, validation error 40.980000 %
+epoch 29, minibatch 400/400, validation error 40.870000 %
+epoch 30, minibatch 400/400, validation error 41.280000 %
+epoch 31, minibatch 400/400, validation error 40.760000 %
+epoch 32, minibatch 400/400, validation error 41.110000 %
+epoch 33, minibatch 400/400, validation error 41.740000 %
+epoch 34, minibatch 400/400, validation error 40.760000 %
+epoch 35, minibatch 400/400, validation error 40.460000 %
+     epoch 35, minibatch 400/400, test error of best model 40.970000 %
+epoch 36, minibatch 400/400, validation error 40.370000 %
+     epoch 36, minibatch 400/400, test error of best model 40.420000 %
+epoch 37, minibatch 400/400, validation error 40.570000 %
+epoch 38, minibatch 400/400, validation error 40.970000 %
+epoch 39, minibatch 400/400, validation error 40.590000 %
+epoch 40, minibatch 400/400, validation error 40.400000 %
+epoch 41, minibatch 400/400, validation error 40.300000 %
+     epoch 41, minibatch 400/400, test error of best model 40.470000 %
+epoch 42, minibatch 400/400, validation error 40.100000 %
+     epoch 42, minibatch 400/400, test error of best model 40.810000 %
+epoch 43, minibatch 400/400, validation error 39.660000 %
+     epoch 43, minibatch 400/400, test error of best model 40.930000 %
+epoch 44, minibatch 400/400, validation error 40.710000 %
+epoch 45, minibatch 400/400, validation error 40.610000 %
+epoch 46, minibatch 400/400, validation error 40.700000 %
+epoch 47, minibatch 400/400, validation error 40.110000 %
+epoch 48, minibatch 400/400, validation error 39.080000 %
+     epoch 48, minibatch 400/400, test error of best model 40.560000 %
+epoch 49, minibatch 400/400, validation error 40.100000 %
+epoch 50, minibatch 400/400, validation error 40.110000 %
+epoch 51, minibatch 400/400, validation error 39.840000 %
+epoch 52, minibatch 400/400, validation error 39.620000 %
+epoch 53, minibatch 400/400, validation error 39.730000 %
+epoch 54, minibatch 400/400, validation error 39.930000 %
+epoch 55, minibatch 400/400, validation error 39.100000 %
+epoch 56, minibatch 400/400, validation error 39.900000 %
+epoch 57, minibatch 400/400, validation error 39.730000 %
+epoch 58, minibatch 400/400, validation error 39.310000 %
+epoch 59, minibatch 400/400, validation error 39.980000 %
+epoch 60, minibatch 400/400, validation error 39.600000 %
+epoch 61, minibatch 400/400, validation error 40.090000 %
+epoch 62, minibatch 400/400, validation error 40.200000 %
+epoch 63, minibatch 400/400, validation error 40.100000 %
+epoch 64, minibatch 400/400, validation error 40.700000 %
+epoch 65, minibatch 400/400, validation error 40.520000 %
+epoch 66, minibatch 400/400, validation error 39.740000 %
+epoch 67, minibatch 400/400, validation error 39.900000 %
+epoch 68, minibatch 400/400, validation error 39.640000 %
+epoch 69, minibatch 400/400, validation error 40.360000 %
+epoch 70, minibatch 400/400, validation error 40.090000 %
+epoch 71, minibatch 400/400, validation error 38.850000 %
+     epoch 71, minibatch 400/400, test error of best model 40.650000 %
+epoch 72, minibatch 400/400, validation error 39.300000 %
+epoch 73, minibatch 400/400, validation error 40.020000 %
+epoch 74, minibatch 400/400, validation error 40.150000 %
+epoch 75, minibatch 400/400, validation error 39.360000 %
+epoch 76, minibatch 400/400, validation error 39.630000 %
+epoch 77, minibatch 400/400, validation error 40.110000 %
+epoch 78, minibatch 400/400, validation error 39.680000 %
+epoch 79, minibatch 400/400, validation error 39.390000 %
+epoch 80, minibatch 400/400, validation error 39.450000 %
+epoch 81, minibatch 400/400, validation error 39.590000 %
+epoch 82, minibatch 400/400, validation error 39.370000 %
+epoch 83, minibatch 400/400, validation error 39.850000 %
+epoch 84, minibatch 400/400, validation error 39.170000 %
+epoch 85, minibatch 400/400, validation error 39.850000 %
+epoch 86, minibatch 400/400, validation error 39.210000 %
+epoch 87, minibatch 400/400, validation error 38.840000 %
+     epoch 87, minibatch 400/400, test error of best model 39.800000 %
+epoch 88, minibatch 400/400, validation error 39.340000 %
+epoch 89, minibatch 400/400, validation error 39.340000 %
+epoch 90, minibatch 400/400, validation error 39.960000 %
+epoch 91, minibatch 400/400, validation error 39.670000 %
+epoch 92, minibatch 400/400, validation error 39.270000 %
+epoch 93, minibatch 400/400, validation error 39.330000 %
+epoch 94, minibatch 400/400, validation error 39.050000 %
+epoch 95, minibatch 400/400, validation error 38.680000 %
+     epoch 95, minibatch 400/400, test error of best model 39.740000 %
+epoch 96, minibatch 400/400, validation error 39.950000 %
+epoch 97, minibatch 400/400, validation error 39.010000 %
+epoch 98, minibatch 400/400, validation error 39.510000 %
+epoch 99, minibatch 400/400, validation error 39.480000 %
+epoch 100, minibatch 400/400, validation error 39.390000 %
+epoch 101, minibatch 400/400, validation error 39.760000 %
+epoch 102, minibatch 400/400, validation error 39.720000 %
+epoch 103, minibatch 400/400, validation error 40.050000 %
+epoch 104, minibatch 400/400, validation error 39.290000 %
+epoch 105, minibatch 400/400, validation error 39.800000 %
+epoch 106, minibatch 400/400, validation error 39.890000 %
+epoch 107, minibatch 400/400, validation error 39.200000 %
+epoch 108, minibatch 400/400, validation error 39.340000 %
+epoch 109, minibatch 400/400, validation error 39.320000 %
+epoch 110, minibatch 400/400, validation error 40.100000 %
+epoch 111, minibatch 400/400, validation error 40.000000 %
+epoch 112, minibatch 400/400, validation error 39.860000 %
+epoch 113, minibatch 400/400, validation error 39.430000 %
+epoch 114, minibatch 400/400, validation error 39.610000 %
+epoch 115, minibatch 400/400, validation error 39.060000 %
+epoch 116, minibatch 400/400, validation error 38.820000 %
+epoch 117, minibatch 400/400, validation error 39.420000 %
+epoch 118, minibatch 400/400, validation error 39.500000 %
+epoch 119, minibatch 400/400, validation error 39.360000 %
+epoch 120, minibatch 400/400, validation error 39.300000 %
+epoch 121, minibatch 400/400, validation error 39.870000 %
+epoch 122, minibatch 400/400, validation error 38.960000 %
+epoch 123, minibatch 400/400, validation error 39.370000 %
+epoch 124, minibatch 400/400, validation error 39.640000 %
+epoch 125, minibatch 400/400, validation error 39.670000 %
+epoch 126, minibatch 400/400, validation error 39.700000 %

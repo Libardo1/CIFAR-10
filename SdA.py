@@ -323,9 +323,9 @@ class SdA(object):
         return train_fn, valid_score, test_score
 
 
-def test_SdA(finetune_lr=0.01, pretraining_epochs=5,
+def test_SdA(finetune_lr=0.5, pretraining_epochs=5,
              pretrain_lr=0.1, training_epochs=1000,
-             dataset='CIFAR10.pkl.gz', batch_size=100):
+             dataset='CIFAR10Z.pkl.gz', batch_size=100):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -366,7 +366,7 @@ def test_SdA(finetune_lr=0.01, pretraining_epochs=5,
     # construct the stacked denoising autoencoder class
     sda = SdA(
         numpy_rng=numpy_rng,
-        n_ins=3 * 32 * 32,
+        n_ins=1 * 32 * 32,
         hidden_layers_sizes=[1000, 100],
         n_outs=10
     )
